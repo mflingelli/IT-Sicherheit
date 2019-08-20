@@ -7,7 +7,7 @@ before_install:
   git
 - git clone https://github.com/matze/mtheme.git
 - cd mtheme
-- make make sty
+- make sty
 - cp *.sty ../
 - cd ../
 script:
