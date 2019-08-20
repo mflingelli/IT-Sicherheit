@@ -26,5 +26,4 @@ deploy:
   on:
     tags: true
     repo: mflingelli/IT-Sicherheit
-    branch: master
 
