@@ -1,0 +1,21 @@
+\makeatletter
+\only<article>{
+  \ifthispageodd{
+  }{
+    \newpage
+    \null
+  }
+  \clearpage
+  \newpage
+  \thispagestyle{empty}
+  \pagecolor{Titelhintergrundfarbe}\afterpage{\nopagecolor}
+  \vspace*{175mm}
+  \linespread{1.25}
+  \begin{flushright}
+    \large\textcolor{Titelfarbe}{Ersteller: \@author}\\
+    \large\textcolor{Titelfarbe}{Letzte \"Anderung: \@date}\\
+    \large\textcolor{Titelfarbe}{\@publishers}
+  \end{flushright}
+  \linespread{1}
+}
+\makeatother
