@@ -17,7 +17,7 @@ script:
 deploy:
   provider: releases
   api_key:
-    secure: U+KwG1oSjqg9l+06kYWEdiq7kwtlLbFmwS5X998qRze/SfAJ8K9RnXLj1Dg7PfF846yfedZ/AD/PR0uc5OEAGvDIwoH+dej4qgxpU0OwBM3ECGVn5n5ct3z$
+    secure: LrWZwbhbdRRfBgxqanfWVA
   file:
     - IT-Sicherheit.pdf
     - IT-Sicherheit_article.pdf
