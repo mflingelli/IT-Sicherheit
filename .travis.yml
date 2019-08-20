@@ -2,8 +2,8 @@ sudo: required
 dist: trusty
 before_install:
 - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
-  texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-german latex-beamer
-  git
+  texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-german
+  latex-beamer git
 - git clone https://github.com/matze/mtheme.git
 - cd mtheme
 - make sty
@@ -11,7 +11,7 @@ before_install:
 - cd ../
 script:
 - pdflatex IT-Sicherheit.tex
-- pdflatex IT-Sicherheit.tex 
+- pdflatex IT-Sicherheit.tex
 - pdflatex IT-Sicherheit_article.tex
 - pdflatex IT-Sicherheit_article.tex
 deploy:
@@ -19,11 +19,13 @@ deploy:
   api_key:
     secure: LrWZwbhbdRRfBgxqanfWVA
   file:
-    - IT-Sicherheit.pdf
-    - IT-Sicherheit_article.pdf
+  - IT-Sicherheit.pdf
+  - IT-Sicherheit_article.pdf
   skip_cleanup: true
   overwrite: true
   on:
     tags: true
     repo: mflingelli/IT-Sicherheit
-
+env:
+  global:
+    secure: pXJJIrrN7rTnmx8mmaBTfe+ijpnpXJOJGUhXj079+sbPf4hG8deClvqqdwJTN6uBqII6kK7ZzvGQyjl9pKBX5m/KuFiHmTj6foEeV9cPAO6okrKHHlg++8G/gGvpiQbW9su2Ivx2TNUznQ0wGnhLaKrWcfqiEI5O1Gu6xu1WLj8OVcPCmEuH+Y+9Bo7j6TOqX0eoM+27Sj5lwsp9+AohbvDlSZ2XPVRnppuXk+1bjv0iLM8/HeCHtS8Rwa2ZYxwjf0duStHqQINndJ4vcVwbypRzgJzTUemh8b6SyzC01KFfrewF0yH3JsELri/x1+QDYaMjJRWMkHMDnZcDF12ibRPd+WHd+mXde5OGiseOhFjP9GE4KhfXbdUp+FjEVsbWL4H/VQgc7fjhdGX4zuVqx49PolgolIx7IINnDqxccxO0VYsN6X1e2dSp7hX/smRplteg5xILFwzKnn6LSB+ZukW0bn+8YyJQWX1wIR3OcSbQKwCmtda0ttkC9zTICPYwFxA6c5Z+dedTJT5PBk2eN2TfZfrBvCAikPuAZISzzuxkIkcm5rvmgvZYoeDgmxqnc0FBV5jTdfA1I7mIvnhLf7n3uOgO8PBdzpO7d3ziwVJ878aAKSaJDh5s0JMeNeLxSz1iMTmWdKYkFuyzznDOsxfqiHfI7WJ6BdJ2QiYykqs=
