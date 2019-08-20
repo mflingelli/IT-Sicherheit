@@ -1,8 +1,6 @@
 sudo: required
 dist: trusty
 before_install:
-- gem install bundler
-- gem install rake
 - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
   texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-german
   git
