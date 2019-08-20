@@ -1,0 +1,504 @@
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{listings}
+\usepackage{longtable}
+\usepackage{tikz}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{textcomp}
+\usetikzlibrary{shapes, calc}
+\usetheme[
+  outer/progressbar=foot,
+  outer/numbering=none
+]{metropolis}
+
+\title{Freiwillige Feuerwehr Steinheim e.V.}
+\subtitle{IT-Sicherheit}
+\author{Dipl.-Inform. (univ.) Markus Flingelli}
+
+\only<article>{
+  \publishers{\textcopyright\ Markus Flingelli, 2019}
+}
+
+\def\datengerman{\def\today{\ifnum\day<10 0\fi\number\day.\ifnum\month<10 0\fi\number\month.\number\year}}
+\date{\today}
+
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
+
+\setbeamercolor{frametitle}{bg=ffRed}
+\newcommand{\befehl}[1]{\ttfamily #1\sf}
+
+\DeclareMathOperator{\e}{e}
+\newcommand{\iu}{{\mathrm{i}\mkern1mu}}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Gliederung}
+    \tableofcontents[sections={\thesection}]
+  \end{frame}
+  \begin{frame}<handout>
+    \frametitle{Gliederung}
+    \tableofcontents[sections={\thesection}]
+  \end{frame}
+}
+
+\renewenvironment{quotation}
+  {\small\list{}{\rightmargin=0cm \leftmargin=0cm}%
+   \item\relax}
+  {\endlist}
+
+\begin{document}
+
+\only<article>{
+  \thispagestyle{empty}
+  \pagecolor{white}\afterpage{\nopagecolor}
+  \maketitle
+}
+
+\begin{frame}[plain]
+ \titlepage
+\end{frame}
+
+\only<article>{
+  \input{Vorwort/vorwort.tex}
+}
+
+\frame{
+\only<presentation>{
+  \frametitle{Inhaltsverzeichnis}
+}
+\tableofcontents[hideallsubsections]
+}
+\only<article>{
+  \newpage
+}
+
+
+
+\section{Sicherheitshinweise}
+
+\subsection{Allgemein}
+
+\begin{frame}
+\only<presentation>{
+	\frametitle{Allgemein}
+}
+\begin{itemize}
+	\item Beim Verlassen des Arbeitsplatzes ist Rechner zu sperren
+	\item Bei der Bearbeitung von sensiblen Daten keinen unbefugten Personen auf den Bildschirm schauen lassen
+	\item Nur Software aus vertrauenswürdigen Quellen verwenden
+\end{itemize}
+\end{frame}
+
+\subsection{Kennwörter}
+
+\only<presentation>{
+	\input{Kennwoerter/praesentation.tex}
+}
+\only<article>{
+	\input{Kennwoerter/artikel.tex}
+}
+
+\only<presentation>{
+\begin{frame}
+\frametitle{Kennwörter -- BSI-Video}
+BSI-Video zu Kennwörtern:\newline \href{http://multimedia.gsb.bund.de/BSI/Video/Sicher\_im\_Internet/Passwoerter.mp4}{\url{http://multimedia.gsb.bund.de/BSI/Video/Sicher\_im\_Internet/Passwoerter.mp4}}
+\end{frame}
+}
+
+\only<article>{\subsubsection{Beliebteste Kennwörter 2018}}
+\begin{frame}
+\only<presentation>{
+	\frametitle{Beliebteste Kennwörter 2018}
+}
+\begin{longtable}{|r|r|r|}
+\hline
+\rowcolor{ffLightRed} & \textcolor{white}{Passwort} & \textcolor{white}{Häufigkeit} \\
+\hline
+ 1 & \texttt{123456}    & 8,17 ‰ \\\hline
+ 2 & \texttt{12345}     & 3,92 ‰ \\\hline
+ 3 & \texttt{123456789} & 1,91 ‰ \\\hline
+ 4 & \texttt{ficken}    & 1,86 ‰ \\\hline
+ 5 & \texttt{12345678}  & 1,40 ‰ \\\hline
+ 6 & \texttt{hallo123}  & 1,18 ‰ \\\hline
+ 7 & \texttt{hallo}     & 1,18 ‰ \\\hline
+ 8 & \texttt{1234}      & 1,03 ‰ \\\hline
+ 9 & \texttt{passwort}  & 0,98 ‰ \\\hline
+10 & \texttt{master}    & 0,86 ‰ \\\hline
+\end{longtable}
+\scriptsize Quelle: \href{https://sec.hpi.de/ilc/statistics}{https://sec.hpi.de/ilc/statistics}
+\end{frame}
+
+\only<article>{\subsubsection{Kennwortgüte}}
+\begin{frame}
+\only<presentation>{
+	\frametitle{Kennwortgüte}
+}
+\begin{longtable}{|r|r|r|r|}
+\hline
+\rowcolor{ffLightRed} 
+\textcolor{white}{Länge} & \textcolor{white}{Ziffern (10)} & \textcolor{white}{Buchstaben (26)} & \textcolor{white}{Kombination (62)}\\
+\hline
+ 6 &       &          &             26 s \\\hline
+ 7 &       &      3 s &             27 m \\\hline
+ 8 &       &      2 m &             28 h \\\hline
+ 9 &       &     42 m &             73 d \\\hline
+10 &   4 s &     18 h &             12 a \\\hline
+11 &  47 s &     19 d &            768 a \\\hline
+12 &   8 m &      1 a &         47.639 a \\\hline
+13 &  78 m &     37 a &      2.953.625 a \\\hline
+14 &  13 h &    952 a &    183.124.811 a \\\hline
+15 & 129 h & 24.766 a & 11.353.738.300 a \\\hline
+\end{longtable}
+\scriptsize Quelle: \href{https://www.1pw.de/brute-force.php}{https://www.1pw.de/brute-force.php}
+\end{frame}
+
+\subsection{Wechseldatenträger}
+
+\begin{frame}
+\only<presentation>{
+	\frametitle{Wechseldatenträger}
+}
+\begin{itemize}
+	\item Wechseldatenträger nur verwenden, wenn dessen Herkunft vertrauenswürdig ist
+	\item Dateien mit vertraulichen Inhalten nur verschlüsselt ablegen (z.B. mit \href{http://www.7-zip.de/}{7-Zip} oder \href{https://www.veracrypt.fr}{VeraCrypt})
+\end{itemize}
+\end{frame}
+
+\subsection{Datensicherung}
+
+\begin{frame}
+\only<presentation>{
+	\frametitle{Datensicherung}
+}
+\begin{itemize}
+	\item Regelmäßige Datensicherungen minimieren Ausfälle von Datenträgern oder Manipulationen an Datenbeständen
+	\item Einspielen der Daten muss geübt werden
+	\item Für Datensicherungsdatenträger gelten gleiche Sicherheitsvorgaben wie für das zu sichernde System
+	\item Datensicherungen nicht im gleichen Raum oder Gebäude lagern
+\end{itemize}
+\end{frame}
+
+\subsection{E-Mail}
+
+\begin{frame}
+\only<presentation>{
+	\frametitle{E-Mail}
+}
+\begin{itemize}
+	\item 3-Sekunden-Sicherheits-Check bei E-Mails
+	\begin{enumerate}
+		\item Ist der Absender bekannt?
+		\item Ist der Betreff sinnvoll?
+		\item Wird ein Anhang von diesem Absender erwartet?
+	\end{enumerate}
+	\item Spam-E-Mails direkt löschen
+	\item Wenn möglich, E-Mails digital signieren und verschlüsseln
+\end{itemize}
+\end{frame}
+
+\subsection{WLAN}
+
+\begin{frame}
+\only<presentation>{
+	\frametitle{WLAN}
+}
+\begin{itemize}
+	\item Nur sichere WLAN verwenden (WPA2)
+	\item Verschlüsselung mit dem Standard WEP ist unsicher und nicht zu empfehlen
+	\item Netzwerknamen (SSID) zufällig wählen (kein Rückschluss auf Betreiber oder verwendetes Gerät)
+	\item Voreingestellte Kennwörter ändern
+	\item WPS-PIN Verfahren deaktivieren
+	\item WLAN nur bei Gebrauch einschalten
+	\only<article>{\item BSI-Video zum WLAN: \href{http://multimedia.gsb.bund.de/BSI/Video/Sicher_im_Internet/WLAN.mp4}{\url{http://multimedia.gsb.bund.de/BSI/Video/Sicher\_im\_Internet/WLAN.mp4}}}
+\end{itemize}
+\end{frame}
+
+\only<presentation>{
+\begin{frame}
+\frametitle{WLAN -- BSI-Video}
+BSI-Video zum WLAN:\newline \href{http://multimedia.gsb.bund.de/BSI/Video/Sicher_im_Internet/WLAN.mp4}{\url{http://multimedia.gsb.bund.de/BSI/Video/Sicher\_im\_Internet/WLAN.mp4}}
+\end{frame}
+}
+
+\subsection{Smartphones}
+
+\only<presentation>{
+	\input{Smartphones/praesentation.tex}
+}
+\only<article>{
+	\input{Smartphones/artikel.tex}
+}
+
+\subsection{Sicherer Umgang mit sozialen Netzwerken}
+
+\only<presentation>{
+	\input{SocialMedia/praesentation.tex}
+}
+\only<article>{
+	\input{SocialMedia/artikel.tex}
+}
+
+\section{DSGVO}
+
+\subsection{Allgemeines}
+\begin{frame}
+\only<presentation>{
+	\frametitle{Allgemeines}
+}
+\begin{itemize}
+	\item Nur notwendige Daten speichern (Datensparsamkeit)
+	\item Bei Verarbeitung personenbezogener Daten muss angemessene Sicherheit gewährleistet werden
+	\item Gesetzliche Speicherfristen sind zu beachten
+	\item Auskunftsrecht des Betroffenen
+	\item Informationsrecht bei Erhebung von Nutzerdaten
+	\item Sicherheit der Verarbeitung
+	\item IT-Sicherheitsvorgaben befolgen
+\end{itemize}
+\end{frame}
+
+\subsection{Technische und organisatorische Maßnahmen}
+\begin{frame}
+\only<presentation>{
+	\frametitle{Technische und organisatorische Maßnahmen}
+}
+\begin{itemize}
+	\item Zustimmung zum Erfassen muss gegeben sein
+	\item Einlegen von Widerspruch zur Datenerfassung muss gewährleistet sein
+	\item Einsicht in erhobenen Daten muss möglich sein
+	\item Verwendungszweck der Daten muss erfragt werden können
+	\item Daten müssen sich berichtigen lassen können
+	\item Daten müssen unter Umständen gesperrt werden können
+\end{itemize}
+\end{frame}
+
+\section{Spam}
+
+\subsection{Grundbegriffe}
+
+\only<article>{\subsubsection{Exkurs}}
+
+\begin{frame}
+\only<presentation>{
+	\frametitle{Exkurs: Ursprung des Begriffs}
+}
+\begin{itemize}
+	\item SPAM war ursprünglich ein Markenname für Dosenfleisch, der bereits 1936 entstanden ist, aus \textit{\textbf{SP}iced h\textbf{AM}} (gewürzter Schinken)
+	\item SPAM in der IT geht vermutlich auf einen am 15.12.1970 erstausgestrahlten Sketch von Monty Python zurück
+	\item Sketch spielt in Café, in dem fast jedes Gericht aus SPAM besteht
+	\item In dem knapp zweiminütigem Sketch wird 132-mal das Wort SPAM verwendet
+	\item Video: \href{https://www.dailymotion.com/video/x2hwqlw}{SPAM-Sketch} (Englisch)
+\end{itemize}
+\end{frame}
+
+\only<article>{\subsubsection{Definitionen}}
+\begin{frame}
+\only<presentation>{
+	\frametitle{Grundbegriffe}
+}
+Spam bezeichnet den Massenversand nichtangeforderter Werbe-E-Mails und kann in folgende Bereiche unterteilt werden:
+\begin{description}
+	\item[Phising] Abfangen vertraulicher Daten wie Passwörter, Zugangsdaten oder Kreditkartennummern
+	\item[Hoax] Falschmeldungen, die vergleichbar mit Zeitungsenten, im Internet kursieren
+	\item[Scam] Scam-Mails enthalten Gewinnversprechen bzw. das Versprechen, schnell und mit einfachen Mitteln reich zu werden
+\end{description}
+\end{frame}
+
+\only<presentation>{
+	\input{Phising/praesentation.tex}
+}
+\only<article>{
+	\subsection{Erkennen von Phising-E-Mails}
+	\input{Phising/artikel.tex}
+}
+
+\only<presentation>{
+\begin{frame}
+\frametitle{Erkennen von Phising-E-Mails -- BSI-Video}
+BSI-Video zu Phising:\newline \href{http://multimedia.gsb.bund.de/BSI/Video/Sicher\_im\_Internet/Phishing.mp4}{\url{http://multimedia.gsb.bund.de/BSI/Video/Sicher\_im\_Internet/Phishing.mp4}}
+\end{frame}
+}
+
+
+\subsection{Beispiele}
+
+\only<article>{\subsubsection{Falsche Telekom-Rechnung}}
+
+\begin{frame}
+\only<presentation>{
+  \frametitle{Falsche Telekom-Rechnung}
+}
+\only<article>{
+  \begin{enumerate}
+  \item[1] Absenderadresse entspricht nicht der Telekom
+  \item[2] Seriöse Anbieter verschicken keine Rechnungen als Word-Dokumente (Gefahr von Viren)
+  \item[3] Keine persönliche Anrede
+  \item[4] Grammatikalischer Fehler
+  \end{enumerate}
+}
+\begin{figure}[ht]
+	\centering
+	\only<presentation>{
+		\includegraphics[width=.95\textwidth]{fake_telekom_rechnung_kommentar.png}
+	}
+	\only<article>{
+	  \includegraphics[width=.80\textwidth]{fake_telekom_rechnung_kommentar.png}
+	}
+\end{figure}
+\end{frame}
+
+\only<article>{\subsubsection{Falscher Microsoft-Servicevertrag}}
+
+\begin{frame}
+\only<presentation>{
+  \frametitle{Falscher Microsoft-Servicevertrag}
+}
+\only<article>{
+  \begin{enumerate}
+  \item[1] Absenderadresse gehört nicht zu Microsoft
+  \item[2] Keine persönliche Begrüßung
+  \end{enumerate}
+}
+\begin{figure}[ht]
+	\centering
+	\only<presentation>{
+		\includegraphics[width=.9\textwidth]{fake_microsoft_email.png}
+	}
+	\only<article>{
+	  \includegraphics[width=.50\textwidth]{fake_microsoft_email.png}
+	}
+\end{figure}
+\end{frame}
+
+\only<article>{\subsubsection{Hoax}}
+
+\begin{frame}
+\only<presentation>{
+	\frametitle{Hoax}
+}
+\begin{quotation}
+Hi Leute,
+
+ich wende mich an Euch, weil ich ziemlich verzweifelt bin. Ich hoffe, Ihr könnt mir und meiner Freundin helfen, und lest diesen Brief! Das Problem ist, dass meine Freundin an Leukämie erkrankt ist. Es hat sich herausgestellt, dass Sie nur noch wenige Wochen zu Leben hat. Aus diesem Grund seit Ihr meine letzte Chance Ihr zu helfen. 
+[...]
+
+Ich danke Euch für Eure Hilfe!!!
+
+Gruß Toshiba65@aol.com
+\end{quotation}
+\end{frame}
+
+\only<article>{\subsubsection{Scam}}
+
+\begin{frame}
+\only<presentation>{
+	\frametitle{Scam}
+}
+\begin{quotation}
+Sehr geehrter Herr,
+
+Ich bin an Ihrer Geschäftspartnerschaft interessiert. Das Angebot, mit dem ich an Sie herantrete, ist für beide Seiten von Vorteil und sein Erfolg gründet sich auf gegenseitiges Vertrauen und gegenseitige Zusammenarbeit und einen hohen Grad an Vertraulichkeit, was diese Transaktion betrifft. Ich representiere den Vorstand der Vertrags- und Aufsichtsabteilung des Zambianischen Ministeriums für Bergbau und Ressourcen. Ich bitte Sie um Ihre Hilfe, um den Transfer der Summe von etwa USD 30.500.000,00 (DREISSIG MILLIONEN FÜNFHUNDERT TAUSEND DOLLAR) auf Ihr Bankkonto zu ermöglichen.
+\end{quotation}
+\end{frame}
+
+\section{Sicherheitsirrtümer}
+
+\subsection{Internet-Sicherheit}
+
+\only<presentation>{
+	\input{Internetsicherheit/praesentation.tex}
+}
+\only<article>{
+	\input{Internetsicherheit/artikel.tex}
+}
+
+
+\subsection{Mobile Sicherheit}
+
+\begin{frame}
+\only<presentation>{
+	\frametitle{Mobile Sicherheit}
+}
+\begin{itemize}
+	\item Meine Daten sind in der Cloud sicher vor Fremdzugriff geschützt.
+	\item Das Surfen in öffentlichen WLANs spart nicht nur Kosten, sondern ist auch sicher.
+	\item Wenn ich mir ein neues Smartphone kaufe, habe ich automatisch ein sicheres Gerät.
+	\item Ich habe natürlich automatische Updates und Aktualisierungen des Betriebssystems und von Apps aktiviert, daher muss ich mich um Schwachstellen nicht kümmern.
+\end{itemize}
+\end{frame}
+
+\subsection{Computer-Sicherheit}
+
+\only<presentation>{
+	\input{Computersicherheit/praesentation.tex}
+}
+\only<article>{
+	\input{Computersicherheit/artikel.tex}
+}
+
+\subsection{E-Mail}
+
+\begin{frame}
+\only<presentation>{
+	\frametitle{E-Mail}
+}
+\begin{itemize}
+	\item Wenn ich eine E-Mail nur anschaue, aber keinen Anhang öffne, kann nichts passieren.
+	\item Das Antworten auf Spam-Mails birgt keine Gefahr, man kann auch den Links zum Löschen aus dem Verteiler folgen.
+	\item Eine E-Mail kommt immer von der Adresse, die im Absenderfeld steht.
+	\item Phishing-Mails sind leicht zu erkennen.
+	\item Ich öffene nur Mails von Freunden und Bekannten, deshalb kann mir nichts passieren.
+\end{itemize}
+\end{frame}
+
+\subsection{Computer-Sicherheit}
+
+\only<presentation>{
+	\input{Computersicherheit/praesentation.tex}
+}
+\only<article>{
+	\input{Computersicherheit/artikel.tex}
+}
+
+\section{Mehrfachnutzung Computer}
+
+\only<presentation>{
+	\input{Computermehrfachnutzung/praesentation.tex}
+}
+\only<article>{
+	\input{Computermehrfachnutzung/artikel.tex}
+}
+
+\section{Weiterführende Informationen}
+
+\begin{frame}
+\only<presentation>{
+	\frametitle{Weiterführende Informationen}
+}
+\begin{itemize}
+	\item BSI für Bürger -- Ins Internet mit Sicherheit:  \href{https://www.bsi-fuer-buerger.de}{https://www.bsi-fuer-buerger.de}
+	\item Datenschutzgrundsätze in Deutschland: \href{https://www.datenschutz.org/datenschutzgrundsaetze/}{https://www.datenschutz.org/datenschutzgrundsaetze/}
+	\item Fraunhofer-Institut für sichere Informationstechnologie: \href{https://www.sit.fraunhofer.de/fileadmin/dokumente/sonstiges/Security-Mythen.pdf}{Security Mythen}
+	\item Landesfeuerwehrverband Bayern: \href{https://www.lfv-bayern.de/aktuelles/datenschutz-im-verein-und-die-neue-datenschutz-grundverordnung/}{https://www.lfv-bayern.de/aktuelles/datenschutz-im-verein-und-die-neue-datenschutz-grundverordnung/}
+\end{itemize}
+\end{frame}
+
+\only<presentation>{
+\begin{frame}
+	\frametitle{Fragen?}
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[height=.75\textheight]{homer_pythagoras.png}
+	\end{figure}
+	\scriptsize{Quelle: \href{https://vividkaret.files.wordpress.com/2014/10/homer.png}{\url{https://vividkaret.files.wordpress.com/2014/10/homer.png}}}
+\end{frame}
+}
+
+\input{../../lastpage.tex}
+
+\end{document}

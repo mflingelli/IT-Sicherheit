@@ -1,0 +1,16 @@
+sudo: required
+dist: trusty
+before_install:
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
+  texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-german
+- git clone https://github.com/matze/mtheme.git
+- cd mtheme
+- make make sty
+- cp *.sty ../
+- cd ../
+script:
+- pdflatex IT-Sicherheit.tex
+- pdflatex IT-Sicherheit.tex 
+- pdflatex IT-Sicherheit_article.tex
+- pdflatex IT-Sicherheit_article.tex
+

@@ -1,0 +1,14 @@
+*.aux
+*.bbl
+*.blg
+*.gz
+*.LNK
+*.log
+*.mdb
+*.LCK
+*.nav
+*.out
+*.snm
+*.toc
+*.lof
+*.pdf
