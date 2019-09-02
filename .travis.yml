@@ -9,6 +9,10 @@ before_install:
 - make sty
 - cp *.sty ../
 - cd ../
+branches:
+    only:
+    - master
+    - /v\d+\.\d+[a-z]/
 script:
 - pdflatex IT-Sicherheit.tex
 - pdflatex IT-Sicherheit.tex
