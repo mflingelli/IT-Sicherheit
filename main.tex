@@ -78,7 +78,9 @@
   \newpage
 }
 
-
+\only<article>{
+  \setlength\parindent{0pt}
+}
 
 \section{Sicherheitshinweise}
 
@@ -491,6 +493,10 @@ Ich bin an Ihrer Geschäftspartnerschaft interessiert. Das Angebot, mit dem ich 
 \only<presentation>{
   \frametitle{Abgreifen Zugangsdaten}
 }
+\only<article>{
+	\newpage
+	Das Abgreifen der Zugangsdaten ist möglich, da die Verbindung zur Webseite nicht abgesichert ist.
+}
 \begin{figure}[ht]
 	\centering
 	\only<presentation>{
@@ -506,6 +512,9 @@ Ich bin an Ihrer Geschäftspartnerschaft interessiert. Das Angebot, mit dem ich 
 \only<presentation>{
   \frametitle{Abgreifen Zugangsdaten}
 }
+\only<article>{
+	Das Abgreifen der Zugangsdaten kann beispielsweise über Wireshark erfolgen. Wireshark ist eine Anwendung, die frei im Internet verfügbar ist.
+}
 \begin{figure}[ht]
 	\centering
 	\only<presentation>{
@@ -520,6 +529,10 @@ Ich bin an Ihrer Geschäftspartnerschaft interessiert. Das Angebot, mit dem ich 
 \begin{frame}
 \only<presentation>{
   \frametitle{Abgreifen Zugangsdaten}
+}
+\only<article>{
+	Das Programm nslookup erlaubt das Auflösen von Namen zu Internetadressen. Dieses Programm ist auf allen gängigen Betriebsystemen wie Windows, Linux und MacOS verfügbar.
+	\newpage
 }
 \begin{figure}[ht]
 	\centering
