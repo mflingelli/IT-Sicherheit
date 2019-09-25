@@ -24,6 +24,7 @@ deploy:
     secure: LrWZwbhbdRRfBgxqanfWVA
   file: IT-Sicherheit.pdf
   skip_cleanup: true
+  draft: true
   overwrite: true
   on:
     tags: true
