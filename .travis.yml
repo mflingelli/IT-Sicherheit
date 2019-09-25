@@ -18,7 +18,7 @@ script:
 deploy:
   provider: releases
   api_key:
-    secure: LrWZwbhbdRRfBgxqanfWVA
+    secure: BXzD8dy8olNp4VJYiMmEnvSfLqYDN5g/nu9jJWRycSp64Z2OPh7x/eZuV4Hg+0e09Mt0Xsj4SkSnd0qsNlxOUhgHw4DXPVwhakgPP/G/CqbqPZVGbEBSVTpchadXPhS3XEY3W4L7qASI4mfC27yGD6kEHSn1mC4nvKrotj/bMJdPs+Sx7jYnZ6Rjic4+4OHcgG2y/WfHfIBj5tnyc1Hlakce3nMhIEQXeSHzOcNtzZe80l4mKJGT9qOpYJW6NcHMVmBBOavBYJOgQInC70X4bOx9q21kCXOoQrLEtXEWaF7GjWHNxeW0N2gBJVn44u0025Z8pyolsvKi4aVYgncQbgp1djM9MUHTeXxA7CTmu136Nahd/VJtGWjZ4FDsrOKY8orXyb57yLVdJeuHbNBxWWBW/f710x9yOBhegcLzpAkQJsdl81bjIIe/KcbWniIbmEJ3VeKh4GqnHoaivVnFnsTeXEjtT0pvwnqdBpH
   file: IT-Sicherheit.pdf
   skip_cleanup: true
   draft: true
