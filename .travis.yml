@@ -1,6 +1,7 @@
 sudo: required
 dist: trusty
 before_install:
+- sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6B05F25D762E3157
 - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
   texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-german
   latex-beamer git
@@ -9,10 +10,6 @@ before_install:
 - make sty
 - cp *.sty ../
 - cd ../
-branches:
-    only:
-    - master
-    - /v\d+\.\d+[a-z]/
 script:
 - pdflatex IT-Sicherheit.tex
 - pdflatex IT-Sicherheit.tex
