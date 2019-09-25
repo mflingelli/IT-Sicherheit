@@ -18,9 +18,11 @@ script:
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
-  file: IT-Sicherheit.pdf
+  file: 
+    - IT-Sicherheit.pdf
+    - IT-Sicherheit_article.pdf
   skip_cleanup: true
-  draft: true
+  draft: false
   overwrite: true
   on:
     tags: true
