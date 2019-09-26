@@ -1,3 +1,53 @@
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{listings}
+\usepackage{longtable}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usetheme[
+  outer/progressbar=foot,
+  outer/numbering=none
+]{metropolis}
+
+\title{Freiwillige Feuerwehr Steinheim e.V.}
+\subtitle{IT-Sicherheit}
+\author{Dipl.-Inform. (univ.) Markus Flingelli}
+
+\only<article>{
+  \publishers{\textcopyright\ Markus Flingelli, 2019}
+}
+
+\def\datengerman{\def\today{\ifnum\day<10 0\fi\number\day.\ifnum\month<10 0\fi\number\month.\number\year}}
+\date{\today}
+
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
+
+\setbeamercolor{frametitle}{bg=ffRed}
+\newcommand{\befehl}[1]{\ttfamily #1\sf}
+
+\DeclareMathOperator{\e}{e}
+\newcommand{\iu}{{\mathrm{i}\mkern1mu}}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Gliederung}
+    \tableofcontents[sections={\thesection}]
+  \end{frame}
+  \begin{frame}<handout>
+    \frametitle{Gliederung}
+    \tableofcontents[sections={\thesection}]
+  \end{frame}
+}
+
+\renewenvironment{quotation}
+  {\small\list{}{\rightmargin=0cm \leftmargin=0cm}%
+   \item\relax}
+  {\endlist}
+
 \begin{document}
 
 \only<article>{
