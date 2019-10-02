@@ -157,11 +157,11 @@ BSI-Video zu Kennwörtern:\newline \href{http://multimedia.gsb.bund.de/BSI/Video
 	\frametitle{WLAN}
 }
 \begin{itemize}
-	\item Nur sichere WLAN verwenden (WPA2)
-	\item Verschlüsselung mit dem Standard WEP ist unsicher und nicht zu empfehlen
-	\item Netzwerknamen (SSID) zufällig wählen (kein Rückschluss auf Betreiber oder verwendetes Gerät)
+	\item Nur sichere WLAN verwenden (WPA2\only<article>{\footnote{Wi-Fi Protected Access 2}})
+	\item Verschlüsselung mit dem Standard WEP\only<article>{\footnote{Wired Equivalent Privacy}} ist unsicher und nicht zu empfehlen
+	\item Netzwerknamen (SSID\only<article>{\footnote{Service Set Identifier}}) zufällig wählen (kein Rückschluss auf Betreiber oder verwendetes Gerät)
 	\item Voreingestellte Kennwörter ändern
-	\item WPS-PIN Verfahren deaktivieren
+	\item WPS\only<article>{\footnote{Wi-Fi Protected Setup}}-PIN Verfahren deaktivieren
 	\item WLAN nur bei Gebrauch einschalten
 	\only<article>{\item BSI-Video zum WLAN: \href{http://multimedia.gsb.bund.de/BSI/Video/Sicher_im_Internet/WLAN.mp4}{\url{http://multimedia.gsb.bund.de/BSI/Video/Sicher\_im\_Internet/WLAN.mp4}}}
 \end{itemize}
@@ -322,6 +322,29 @@ BSI-Video zu Phising:\newline \href{http://multimedia.gsb.bund.de/BSI/Video/Sich
 	}
 	\only<article>{
 	  \includegraphics[width=.85\textwidth]{fake_online_banking.png}
+	}
+\end{figure}
+\end{frame}
+
+\only<article>{\subsubsection{Falscher Microsoft-Servicevertrag}}
+
+\begin{frame}
+\only<presentation>{
+  \frametitle{Falscher Microsoft-Servicevertrag}
+}
+\only<article>{
+  \begin{enumerate}
+  \item[1] Absenderadresse gehört nicht zu Microsoft
+  \item[2] Keine persönliche Begrüßung
+  \end{enumerate}
+}
+\begin{figure}[ht]
+	\centering
+	\only<presentation>{
+		\includegraphics[width=.9\textwidth]{fake_microsoft_email.png}
+	}
+	\only<article>{
+	  \includegraphics[width=.75\textwidth]{fake_microsoft_email.png}
 	}
 \end{figure}
 \end{frame}
