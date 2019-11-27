@@ -7,6 +7,7 @@
 \usepackage{longtable}
 \usepackage{amsthm}
 \usepackage{amsmath}
+\usepackage{ifthen}
 \usetheme[
   outer/progressbar=foot,
   outer/numbering=none
@@ -30,6 +31,10 @@
 
 \DeclareMathOperator{\e}{e}
 \newcommand{\iu}{{\mathrm{i}\mkern1mu}}
+
+\newboolean{publicEdition}
+\setboolean{publicEdition}{true}
+
 
 \AtBeginSection[]
 {
