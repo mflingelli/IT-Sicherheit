@@ -15,12 +15,15 @@
   outer/numbering=none
 ]{metropolis}
 
+\newcommand{\Vortragstitel}{IT-Sicherheit}
+\newcommand{\CopyrightHinweis}{\textcopyright\ Markus Flingelli, 2019 - \the\year}
+
 \title{Freiwillige Feuerwehr Steinheim e.V.}
-\subtitle{IT-Sicherheit}
+\subtitle{\Vortragstitel}
 \author{Dipl.-Inform. (univ.) Markus Flingelli}
 
 \only<article>{
-  \publishers{\textcopyright\ Markus Flingelli, 2019 - \the\year}
+  \publishers{\CopyrightHinweis}
 }
 
 \def\datengerman{\def\today{\ifnum\day<10 0\fi\number\day.\ifnum\month<10 0\fi\number\month.\number\year}}
@@ -30,10 +33,10 @@
 
 \only<article>{
   \hypersetup{
-  pdftitle = {IT-Sicherheit},
+  pdftitle = {\Vortragstitel},
   pdfsubject = {},
   pdfkeywords = {IT-Sicherheit, DSGVO, Sicherheitsirrtümer, Datensicherung, Sicherheitshinweise},
-  pdfauthor = {\textcopyright\ Markus Flingelli, 2019 - \the\year},
+  pdfauthor = {\CopyrightHinweis},
   pdfcreator = {\LaTeX\ u.a. mit dem Paket \flqq hyperref\frqq},
   pdfproducer = {pdfeTeX-0.\the\pdftexversion\pdftexrevision},
   }
