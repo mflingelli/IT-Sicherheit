@@ -20,13 +20,24 @@
 \author{Dipl.-Inform. (univ.) Markus Flingelli}
 
 \only<article>{
-  \publishers{\textcopyright\ Markus Flingelli, 2019}
+  \publishers{\textcopyright\ Markus Flingelli, 2019 - \the\year}
 }
 
 \def\datengerman{\def\today{\ifnum\day<10 0\fi\number\day.\ifnum\month<10 0\fi\number\month.\number\year}}
 \date{\today}
 
 \hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
+
+\only<article>{
+  \hypersetup{
+  pdftitle = {IT-Sicherheit},
+  pdfsubject = {},
+  pdfkeywords = {IT-Sicherheit, DSGVO, Sicherheitsirrtümer, Datensicherung, Sicherheitshinweise},
+  pdfauthor = {\textcopyright\ Markus Flingelli, 2019 - \the\year},
+  pdfcreator = {\LaTeX\ u.a. mit dem Paket \flqq hyperref\frqq},
+  pdfproducer = {pdfeTeX-0.\the\pdftexversion\pdftexrevision},
+  }
+}
 
 \setbeamercolor{frametitle}{bg=ffRed}
 \newcommand{\befehl}[1]{\ttfamily #1\sf}
