@@ -6,6 +6,7 @@
 \input{fancyheader.tex}
 \input{main_header.tex}
 \setlength\parindent{0pt}
+\KOMAoptions{twoside=true}
 
 
 \xdef\Colored{1}
@@ -51,7 +52,6 @@
 \def\aligm{m}%
 \def\aligt{t}%
 
-\vspace{8pt}
 \savebox{\lambBox}{\hbox{\begin{tikzpicture}[inner sep=0,outer sep=0]
 \fill[rounded corners=0.35mm,rotate=-15,gray!90!black] (0.05,-0.15)rectangle(-0.1,-0.02);
 \draw[line width=0.9mm] (0.2,0.01) to[in=330 , out=170] (-0.2,0.11);
@@ -90,7 +90,6 @@
 \draw[\ColorO,line width=0.5mm] (0,\ifdim\testL> 0pt -\ht\tipVBox \else -0.5\ht\lambBox\fi)--(0,\ifdim\testL> 0pt \lengthC \else 0.5\ht\lambBox\fi);
 \end{tikzpicture}%
 
-\vspace{8pt}
 }
 
 \input{main.tex}
