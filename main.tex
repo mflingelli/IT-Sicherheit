@@ -132,60 +132,49 @@ BSI-Video zu Kennwörtern:
 \scriptsize Quelle: \href{https://sec.hpi.de/ilc/statistics}{https://sec.hpi.de/ilc/statistics}, Stand 15.02.2020
 \end{frame}
 
-\only<article>{\subsubsection{Kennwortgüte}}
+\only<article>{\subsubsection{Brute-Force-Attacke}}
 \begin{frame}
 \only<presentation>{
-	\frametitle{Kennwortgüte}
+	\frametitle{Brute-Force-Attacke}
 }
-\begin{longtable}{|r|r|r|r|}
-\hline
-\rowcolor{ffLightRed} 
-\textcolor{white}{Länge} & \textcolor{white}{Ziffern (10)} & \textcolor{white}{Buchstaben (26)} & \textcolor{white}{Kombination (62)}\\
-\hline
- 6 &       &          &             26 s \\\hline
- 7 &       &      3 s &             27 m \\\hline
- 8 &       &      2 m &             28 h \\\hline
- 9 &       &     42 m &             73 d \\\hline
-10 &   4 s &     18 h &             12 a \\\hline
-11 &  47 s &     19 d &            768 a \\\hline
-12 &   8 m &      1 a &         47.639 a \\\hline
-13 &  78 m &     37 a &      2.953.625 a \\\hline
-14 &  13 h &    952 a &    183.124.811 a \\\hline
-15 & 129 h & 24.766 a & 11.353.738.300 a \\\hline
-\end{longtable}
-\scriptsize Quelle: \href{https://www.1pw.de/brute-force.php}{https://www.1pw.de/brute-force.php}
+\begin{itemize}
+  \item Bei einer Brute-Force-Attacke versucht ein Angreifer durch wiederholte und systematische Eingabe verschiedener Nutzernamen und Passwörter Login-Daten zu \glqq erraten\grqq.
+  \item Umsetzung erfolgt meist über automatisierte Anwendungen auf Ressourcen-intensiver Rechner.
+\end{itemize}
 \end{frame}
 
-\only<article>{\subsubsection{Anzahl möglicher Kennwörter}}
+\only<article>{\subsubsection{Benötigte Rechenzeit}}
 \begin{frame}
 \only<presentation>{
-	\frametitle{Anzahl möglicher Kennwörter}
+	\frametitle{Benötigte Rechenzeit}
 }
 \begin{center}
-	\input{password_strength.tikz}
+\input{brute_force.tikz}
+
+\scriptsize Quelle: \href{https://www.cloudflare.com/learning/bots/brute-force-attack/}{https://www.cloudflare.com/learning/bots/brute-force-attack/}
 \end{center}
 \end{frame}
 
-\only<article>{
-\subsubsection{Zahlennamen}
-\begin{frame}
-\begin{longtable}{|r|l|}
-\hline
-\rowcolor{ffLightRed} 
-\textcolor{white}{Potenz} & \textcolor{white}{Zahlenname} \\
-\hline
-	$10^6$    & Million\\\hline
-	$10^9$    & Milliarde\\\hline
-	$10^{12}$ & Billion\\\hline
-	$10^{15}$ & Billiarde\\\hline
-	$10^{18}$ & Trillion\\\hline
-	$10^{21}$ & Trilliarde\\\hline
-	$10^{24}$ & Quadrillion\\\hline
-	$10^{27}$ & Quadrilliarde\\\hline
-	$10^{30}$ & Quintillion\\\hline
-\end{longtable}
-\end{frame}
-}
+%\only<article>{
+%\subsubsection{Zahlennamen}
+%\begin{frame}
+%\begin{longtable}{|r|l|}
+%\hline
+%\rowcolor{ffLightRed} 
+%\textcolor{white}{Potenz} & \textcolor{white}{Zahlenname} \\
+%\hline
+%	$10^6$    & Million\\\hline
+%	$10^9$    & Milliarde\\\hline
+%	$10^{12}$ & Billion\\\hline
+%	$10^{15}$ & Billiarde\\\hline
+%	$10^{18}$ & Trillion\\\hline
+%	$10^{21}$ & Trilliarde\\\hline
+%	$10^{24}$ & Quadrillion\\\hline
+%	$10^{27}$ & Quadrilliarde\\\hline
+%	$10^{30}$ & Quintillion\\\hline
+%\end{longtable}
+%\end{frame}
+%}
 
 
 \subsection{Wechseldatenträger}

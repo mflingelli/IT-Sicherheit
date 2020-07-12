@@ -1,0 +1,16 @@
+\begin{tikzpicture}\only<article>{[thick,scale=0.8, every node/.style={scale=0.8}]}
+\foreach \x in {0,...,7}
+  \draw [gray!50,dotted] (0,\x) -- (10,\x);
+\draw[fill=ffUltraLightRed] (0.5cm,0cm) rectangle (1.5cm,.1cm) node at (1cm,.4cm) {1 Sekunde};   
+\node at (1cm, -.5cm) {5};
+\draw[fill=ffUltraLightRed] (2.5cm,0cm) rectangle (3.5cm,.3cm) node at (3cm,.7cm) {9 Sekunden};   
+\node at (3cm, -.5cm) {7};
+\draw[fill=ffUltraLightRed] (4.5cm,0cm) rectangle (5.5cm,.8cm) node at (5cm,1.1cm) {4,4 Tage};   
+\node at (5cm, -.5cm) {9};
+\draw[fill=ffUltraLightRed] (6.5cm,0cm) rectangle (7.5cm,1.6cm) node at (7cm,1.9cm) {7,6 Jahre};   
+\node at (7cm, -.5cm) {11};
+\draw[fill=ffUltraLightRed] (8.5cm,0cm) rectangle (9.5cm,6.8cm) node at (9cm,7.1cm) {359.000 Jahre};   
+\node at (9cm, -.5cm) {13};
+\node[rotate=90] at (-.5,3.5) {Ben\"otigte Zeit};
+\node at (4,8) {\textbf{Ben\"otigte Rechenzeit bei 15 Millionen Schl\"usseln pro Sekunde}};
+\end{tikzpicture}
