@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\foreach \anfang/\ende/\middle/\farbe/\anchor/\txtwidth/\description in {  
+ 	0/104.4/52.2/red!90!black/right/3.75cm/29 \% hatten Probleme durch Schadsoftware, 
+ 	104.4/144/123.1/red!40!white/left/4.5cm/11 \% mehrmals Opfer eines ge\-ziel\-ten Angriffs in den letzten Jahren, 
+ 	144/165.6/154.8/red!50!orange/left/3.45cm/6 \% haben st\"andig mit Angriffen zu k\"ampfen, 
+ 	165.6/360/263/red!65!blue/right/5.5cm/54 \% noch nie von Angriffen betroffen}
+{ 	
+  \draw[fill=\farbe,draw=none] (0,0) -- (\anfang:2.5cm) arc (\anfang:\ende:2.5cm);
+  \draw[fill=white,draw=none] (0,0) circle (1.8cm);
+  \draw (\middle:2.5cm) -- (\middle:3cm) node[rectangle, text width=\txtwidth,\anchor] {\baselineskip=8pt \footnotesize \description\par};
+}
+\end{tikzpicture}
