@@ -24,6 +24,7 @@ deploy:
     - IT-Sicherheit.pdf
     - IT-Sicherheit_article.pdf
   skip_cleanup: true
+  prerelease: true
   draft: false
   overwrite: true
   on:
