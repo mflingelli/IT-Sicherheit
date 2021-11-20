@@ -16,8 +16,8 @@
   ylabel={Umsatz im Jahr 2019 in Milliarden US-Dollar}
 ]
 \addplot [
-  draw=red,
-  fill=red
+  draw=ffLightRed,
+  fill=ffLightRed
 ] 
 coordinates {
   (Facebook, 70) 
