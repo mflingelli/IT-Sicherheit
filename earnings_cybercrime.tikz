@@ -1,0 +1,30 @@
+\begin{tikzpicture}[scale=0.6, every node/.style={scale=0.6}]
+ \begin{axis} [
+  ybar,
+  axis x line*=bottom, % Sternchen führt dazu, dass kein Pfeil an Achse.
+  axis y line*=left, 
+  bar width=30pt,
+  width=13cm,
+  ymin=0,
+  ymax=1600,
+  symbolic x coords={Facebook, Microsoft, Alphabet, Apple, Cyber-Verbrechen},
+  xtick=data,  
+  nodes near coords,  
+  nodes near coords align={vertical},
+  grid style={dotted,gray},
+  ymajorgrids=true,
+  ylabel={Umsatz im Jahr 2019 in Milliarden US-Dollar}
+]
+\addplot [
+  draw=red,
+  fill=red
+] 
+coordinates {
+  (Facebook, 70) 
+  (Microsoft,126)
+  (Alphabet, 161)
+  (Apple, 260)
+  (Cyber-Verbrechen, 1500)
+};
+\end{axis}
+\end{tikzpicture}
