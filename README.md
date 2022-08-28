@@ -1,6 +1,6 @@
 # IT-Sicherheit
 
-[![Build Status](https://travis-ci.org/mflingelli/IT-Sicherheit.svg?branch=master)](https://app.travis-ci.com/github/mflingelli/IT-Sicherheit)
+![](https://github.com/mflingelli/IT-Sicherheit/actions/workflows/workflow.yml/badge.svg)
 
 Die Gefahren, die im Internet herrschen, werden oft unterschätzt oder nicht wahrgenommen. Das Thema IT-Sicherheit wird im privaten Umfeld oft stiefmütterlich behandelt. Unter IT-Sicherheit versteht man alle Planungen, Maßnahmen und Kontrollen, die dem Schutz der IT dienen. 
 
