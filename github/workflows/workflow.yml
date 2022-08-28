@@ -1,0 +1,34 @@
+name: IT-Sicherheit
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: TeXLive installation
+        run: |
+          sudo apt-get -qq update
+          sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-german git
+      - name: Prepartion of mtheme
+        run: |
+          git clone https://github.com/matze/mtheme.git
+          cd mtheme
+          make sty
+          cp *.sty ../
+          cd ../
+      - name: LaTeX compilation
+        run: |
+          pdflatex IT-Sicherheit.tex > /dev/null 2>&1
+          pdflatex IT-Sicherheit.tex > /dev/null 2>&1
+          pdflatex IT-Sicherheit_article.tex > /dev/null 2>&1
+          pdflatex IT-Sicherheit_article.tex > /dev/null 2>&1
+      - name: Draft release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          files: |
+            IT-Sicherheit.pdf
+            IT-Sicherheit_article.pdf
+
+
