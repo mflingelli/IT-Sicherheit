@@ -26,7 +26,7 @@ jobs:
       - name: Generate pre-release tag
         id: tag
         run: |
-          tag_name: ${{ env.RELEASE_TAG }}
+          echo "RELEASE_TAG=Entwurf" >> $GITHUB_ENV
       - name: Provide pre-release
         uses: softprops/action-gh-release@v1
         env:
